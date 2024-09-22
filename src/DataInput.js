@@ -23,7 +23,7 @@ const DataInput = () => {
         setError('');
         try {
             const jsonData = JSON.parse(inputData);
-            const response = await axios.post('https://bhfl-backend-cabm.onrender.com/bfhl', jsonData);
+            const response = await axios.post('https://bajaj-backend-tgz9.onrender.com/bfhl', jsonData);
             setResponseData(response.data);
         } catch (err) {
             console.error('Submission error:', err);
