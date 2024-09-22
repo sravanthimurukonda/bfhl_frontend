@@ -23,7 +23,7 @@ const DataInput = () => {
         setError('');
         try {
             const jsonData = JSON.parse(inputData);
-            const response = await axios.post('https://bajaj-backend-tgz9.onrender.com/bfhl', jsonData);
+            const response = await axios.post('https://bhfl-backend-cabm.onrender.com/bfhl', jsonData);
             setResponseData(response.data);
         } catch (err) {
             console.error('Submission error:', err);
@@ -51,8 +51,8 @@ const DataInput = () => {
     };
 
     return (
-        <div>
-            <h1>Data Input</h1>
+        <div style={{ maxWidth: '600px', margin: '0 auto', padding: '20px', border: '1px solid #ddd', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0,0,0,0.1)' }}>
+            <h1 style={{ textAlign: 'center' }}>Data Input</h1>
             <form onSubmit={handleSubmit}>
                 <textarea
                     rows="5"
@@ -60,10 +60,22 @@ const DataInput = () => {
                     onChange={(e) => setInputData(e.target.value)}
                     placeholder='Enter JSON here (e.g., {"data": ["A", "C", "Z", "c", "i"], "file_b64": "BASE_64_STRING"})'
                     required
+                    style={{ width: '100%', padding: '10px', borderRadius: '5px', border: '1px solid #ccc', fontSize: '16px', marginBottom: '10px' }}
                 />
                 <button
                     type="submit"
-                    style={{ backgroundColor: 'blue', color: 'white', border: 'none', padding: '10px 15px', cursor: 'pointer' }}
+                    style={{ 
+                        backgroundColor: 'blue', 
+                        color: 'white', 
+                        border: 'none', 
+                        padding: '10px 15px', 
+                        cursor: 'pointer', 
+                        borderRadius: '5px', 
+                        fontSize: '16px',
+                        transition: 'background-color 0.3s ease'
+                    }}
+                    onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'darkblue'}
+                    onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'blue'}
                 >
                     Submit
                 </button>
